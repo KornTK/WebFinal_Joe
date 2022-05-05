@@ -42,6 +42,7 @@ $result = mysqli_query($mysqli, $sql);
             <?Php $row = mysqli_fetch_array($result, MYSQLI_ASSOC) ?>
             <center>
                 <h1>แก้ไขข้อมูลผู้ใช้ไอดีที่ : <?php echo $row["guest_id"]; ?> </h1>
+            <input type="hidden" name="guest_id" id="guest_id" value="<?php echo $row["guest_id"]; ?>">
             </center>
             <div class="row p-3">
                 <div class="col-lg-4">

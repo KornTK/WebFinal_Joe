@@ -9,7 +9,7 @@ unset($_SESSION['admin_id']);
 session_destroy();
 
 if (!isset($_SESSION['admin_id'])) {
-    header('Location:' . $main->siteurl . 'login.php');
+    header('Location:' . $main->siteurl . 'admin/login.php');
     exit;
     //echo 'logout';
 } else {

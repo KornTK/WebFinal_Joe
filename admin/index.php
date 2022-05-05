@@ -51,40 +51,44 @@ include 'condb.php';
                 <table class="table  table-striped table-hover table-bordered">
                     <tr>
                         <th width='10%'>รหัสผู้พัก</th>
+                        <th width='10%'>รหัสนักศึกษา</th>
                         <th width='10%'>คำนำหน้า</th>
                         <th>ชื่อ</th>
                         <th>นามสกุล</th>
                         <th>ค้างชำระ</th>
                         <th>ห้อง</th>
-                        <th>ลบ/อัปเดต</th>
-						<th>อัปเดต</th>
-                        <th>สลิป</th>
+                        <th>อัปเดต</th>
+						<th>สลิป</th>
+                        <th>ลบ</th>
                     </tr>
                     <?php while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) { ?>
                         <tr>
                             <td align='right'><?php echo $row["guest_id"]; ?></td>
+                            <td><?php echo $row["stu_id"]; ?></td>
                             <td><?php echo $row["g_prefix"]; ?></td>
                             <td><?php echo $row["g_name"]; ?></td>
                             <td><?php echo $row["g_sname"]; ?></td>
                             <td><?php echo $row["g_overdue"]; ?></td>
                             <td><?php echo $row["g_room"]; ?></td>
                             </td>
-							<td>
-                            <form action="del-guest.php" method="post">
-                            <input type="hidden" id="guest_id" name="guest_id" value="<?php echo $row["guest_id"]; ?>">
-                            <button type="submit" class="btn btn-danger"> ลบ</button>
-                            </form>
+							
 							<td>
                             <form action="up-guest.php" method="post">
                             <input type="hidden" id="guest_id" name="guest_id" value="<?php echo $row["guest_id"]; ?>">
-                            <button type="submit" class="btn btn-danger"> อัปเดต</button>
+                            <button type="submit" class="btn btn-info"> อัปเดต</button>
                             </form>
 							</td>
                             </td>
                             <td>
                             <form action="index1.php" method="post">
                             <input type="hidden" id="guest_id" name="guest_id" value="<?php echo $row["guest_id"]; ?>">
-                            <button type="submit" class="btn btn-danger"> สลิป</button>
+                            <button type="submit" class="btn btn-primary"> สลิป</button>
+                            </form>
+                            </td>
+                            <td>
+                            <form action="del-guest.php" method="post">
+                            <input type="hidden" id="guest_id" name="guest_id" value="<?php echo $row["guest_id"]; ?>">
+                            <button type="submit" class="btn btn-danger"> ลบ</button>
                             </form>
                             </td>
                         </tr>

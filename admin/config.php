@@ -2,7 +2,7 @@
 <?php
 class WConfig
 {
-    var $siteurl = 'http://localhost/ma/';
+    var $siteurl = 'http://localhost/WebFinal_Joe/';
 
     var $title_eng = 'ระบบส่งรายละเอียดการจ่ายค่าน้ำ-ค่าไฟหอพัก';
     var $title = 'ระบบส่งรายละเอียดการจ่ายค่าน้ำ-ค่าไฟหอพัก';

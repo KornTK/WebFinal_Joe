@@ -37,6 +37,22 @@ include 'condb.php';
     <div class="container bg-light p-3">
         <form action="sql_insert.php" method="post">
             <div class="row p-3">
+            <div class="col-lg-4">
+                    <label class="form-label">รหัสนักศึกษา</label>
+                    <input type="text" name="stu_id" class="form-control" required>
+                </div>
+              
+                <div class="col-lg-4">
+                    <label class="form-label">รหัสผ่าน</label>
+                    <input type="text" name="password" class="form-control" required>
+                </div>
+                <div class="col-lg-4">
+                    <label class="form-label">ห้องที่พัก</label>
+                    <input type="text" name="g_room" class="form-control" required>
+                </div>
+
+            
+                <div class="row p-3">
                 <div class="col-lg-4">
                     <label class="form-label">คำนำหน้าชื่อ</label>
                     <select name="g_prefix" class="form-select" required>
@@ -54,37 +70,23 @@ include 'condb.php';
                     <label class="form-label">นามสกุล</label>
                     <input type="text" name="g_sname" class="form-control" required>
                 </div>
+                <input type="hidden" id="guest_id" name="img_slip" value="">
+                <input type="hidden" id="g_overdue" name="g_overdue" value="">
+                </div>
             </div>
 
-            <div class="row p-3">
-                <div class="col-lg-4">
-                    <label class="form-lable">ค้างชำระ</label>
-                    <input type="int" name="g_overdue" class="form-control" required>
-
-                </div>
-                <div class="col-lg-4">
-                    <label class="form-label">ห้อง</label>
-                    <input type="text" name="g_room" class="form-control" required>
-                </div>
-
-                <?php
-                $sql = "SELECT * FROM `area`";
-                $result_pos = mysqli_query($mysqli, $sql);
-                ?>
-            </div>
+    
 
             
 
             <div class="row p-3">
-
-                <div class="col-lg-1">
+            <center>
+                <div class="col-lg-2">
                     <input type="submit" class="btn btn-success" value="บันทึก">
-                </div>
-                <div class="col-lg-1">
                     <input type="reset" class="btn btn-warning" value="ล้างค่า">
                 </div>
+                </center>
             </div>
-
         </form>
 
     </div>
